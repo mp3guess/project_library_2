@@ -1,4 +1,2 @@
-package repositories;
-
-public class PeopleRepository {
+package repositories;public interface PeopleRepository {
 }

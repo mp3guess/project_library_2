@@ -1,4 +1,2 @@
-package repositories;
-
-public class BooksRepository {
+package repositories;public interface BooksRepository {
 }
