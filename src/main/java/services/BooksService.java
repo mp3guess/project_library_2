@@ -2,6 +2,7 @@ package services;
 
 
 import models.Book;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import repositories.BooksRepository;
@@ -15,6 +16,7 @@ public class BooksService {
 
     private final BooksRepository booksRepository;
 
+    @Autowired
     public BooksService(BooksRepository booksRepository) {
         this.booksRepository = booksRepository;
     }

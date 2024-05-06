@@ -1,22 +1,36 @@
 package models;
 
+import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
+@Entity
+@Table(name = "book")
 public class Book {
+
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @NotEmpty(message = "Book title should not be empty")
     @Size(min = 2, max = 100, message = "Book title should be between 2 and 100 characters")
+    @Column(name = "title")
     private String title;
 
     @NotEmpty(message = "Author name should not be empty")
+    @Column(name = "author")
     @Size(min = 2, max = 100, message = "Author name should be between 2 and 100 characters")
     private String author;
 
+    @Column(name = "year")
     @Min(value = 1500, message = "Year should be > 1500")
     private int year;
+
+    @ManyToOne
+    @JoinColumn(name = "person_id",referencedColumnName = "id")
+    private Person owner;
 
     public Book() {
 
@@ -28,13 +42,6 @@ public class Book {
         this.year = year;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;
@@ -58,5 +65,13 @@ public class Book {
 
     public void setYear(int year) {
         this.year = year;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

@@ -1,5 +1,6 @@
 package services;
 
+import models.Book;
 import models.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,7 +32,6 @@ public class PeopleService {
 
     @Transactional
     public void save(Person person) {
-
         peopleRepository.save(person);
     }
 
@@ -46,4 +46,15 @@ public class PeopleService {
         peopleRepository.deleteById(id);
     }
 
+    public Optional<Person> getPersonByFullName(String fullName){
+        return peopleRepository.findByFullName(fullName);
+    }
+
+//    public List<Book> getBooksByPersonId(int id){
+//        Optional<Person> person = peopleRepository.findById(id);
+//
+//        if(person.isPresent()){
+//
+//        }
+//    }
 }
