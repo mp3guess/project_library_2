@@ -1,4 +1,4 @@
-package models;
+package library.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;

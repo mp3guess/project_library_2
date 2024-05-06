@@ -1,11 +1,11 @@
-package util;
+package library.util;
 
-import models.Person;
+import library.models.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
-import services.PeopleService;
+import library.services.PeopleService;
 
 @Component
 public class PersonValidator implements Validator {

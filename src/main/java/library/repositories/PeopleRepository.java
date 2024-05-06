@@ -1,11 +1,10 @@
-package repositories;
+package library.repositories;
 
 
-import models.Person;
+import library.models.Person;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
 import java.util.Optional;
 
 @Repository
